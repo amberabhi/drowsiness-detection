@@ -471,7 +471,7 @@
             </div>
             <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
               <div class="w-full pt-6 text-4xl font-bold text-center">
-                ₹899
+                ₹1399
                 <span class="text-base">/ per user</span>
               </div>
               <div class="flex items-center justify-center">
@@ -497,7 +497,7 @@
             </div>
             <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
               <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                ₹1399
+                ₹899
                 <span class="text-base">/ per user</span>
               </div>
               <div class="flex items-center justify-center">
@@ -544,9 +544,11 @@
       <h3 class="my-4 text-3xl leading-tight">
         Main Hero Message to sell yourself!
       </h3>
-      <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-        Action!
-      </button>
+      <a href="{%url 'contact'%}" >
+        <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          Action!
+        </button>
+      </a>
     </section>
     <!--Footer-->
     <footer class="bg-white">
@@ -606,7 +608,7 @@
                 <a href="{%url 'aboutus'%}" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
               </li>
               <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+                <a href="{%url 'contact'%}" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
               </li>
             </ul>
           </div>
@@ -615,10 +617,10 @@
       {% comment %} <a href="https://www.freepik.com/free-photos-vectors/background" class="text-gray-500 text-center">Background vector created by freepik - www.freepik.com</a> {% endcomment %}
     </footer>
 
-    <div>
+    {% comment %} <div>
       <p class="text-center p-3">Team Byte me If u Can</p>
     </div>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  {% endcomment %}
 
     <script>
       var scrollpos = window.scrollY;

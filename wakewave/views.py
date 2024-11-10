@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 def home(request):
     return render(request, 'home.html')
 
+def contact(request):
+    return render(request, 'contact.html')
+
 
 def faq(request):
     return render(request, 'faq.html')

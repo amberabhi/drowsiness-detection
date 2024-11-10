@@ -27,5 +27,6 @@ urlpatterns = [
     path('switch-theme/', views.change_theme, name="change-theme"),
     path('faq/', views.faq, name='faq'),
     path('aboutus/', views.aboutus, name='aboutus'),
+    path('contact/', views.contact, name='contact'),
 
 ]
