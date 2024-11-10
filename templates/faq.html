@@ -1,0 +1,236 @@
+{% load static tailwind_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gps</title>
+    {% tailwind_css %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <style>
+        .gradient {
+            background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+        }
+        .faq-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f7fafc;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-question {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d53369;
+            margin-bottom: 10px;
+        }
+        .faq-answer {
+            font-size: 16px;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+        .faq-answer ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+    <nav id="header" class="fixed w-full z-30 top-0 text-white gradient">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      
+          <div class="pl-4 flex items-center">
+            <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
+      
+              WAKE WAVE
+            </a>
+          </div>
+          <div class="block lg:hidden pr-4">
+            <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+              <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0   
+       6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="w-full 
+       flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0   
+       z-20" id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+              <li class="mr-3">
+                <a href="{% 
+       url 'change-theme' %}" class="nav-link bg-gray-100 px-4 py-2 rounded-3xl hover:bg-gray-300 duration-300 dark:bg-slate-600">
+                  {% if is_change_theme %}
+                    <i class="fa-solid fa-sun"></i>
+                  {% else %}
+                    <i class="fa-solid fa-moon"></i>
+                  {% endif %}
+                </a>
+              </li>
+              <li class="mr-3">
+                <a href="{% url 'detection' %}" class="nav-link inline-block text-black  hover:text-gray-800 py-2 px-4 detection-link ">Detection</a>
+              </li>
+              <li class="mr-3">
+                <a href="{% url 'gps' %}" class="nav-link inline-block text-black  hover:text-gray-800 py-2 px-4 gps-link ">Gps</a>
+              </li>
+            </ul>
+            <a href="{% url 'signup' %}">
+              <button id="navAction" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75   
+       focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Sign Up
+              </button>
+            </a>
+          </div>
+        </div>
+        <hr class="border-b border-gray-100 opacity-25 my-0 py-0"   
+       />
+      </nav>
+
+    <div class="faq-section">
+        <h1 class="faq-title">Frequently Asked Questions (FAQ)</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">1. What is WakeWave?</div>
+            <div class="faq-answer">WakeWave is an AI-powered Drowsiness Detection System designed to monitor a driver’s alertness and provide warnings in real-time to prevent accidents caused by fatigue or drowsiness.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">2. How does the Drowsiness Detection System work?</div>
+            <div class="faq-answer">The system uses computer vision techniques to monitor the driver’s face, specifically eye movements, blinking patterns, and yawning. It analyzes these indicators in real-time using advanced AI models, alerting the driver when signs of drowsiness are detected.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">3. What technology is used in WakeWave?</div>
+            <div class="faq-answer">WakeWave uses a combination of OpenCV for real-time video analysis, dlib for facial landmark detection, and machine learning models to predict drowsiness. The system is integrated into a user-friendly web application built with Django.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">4. Is the detection system accurate?</div>
+            <div class="faq-answer">While no system is perfect, WakeWave has been tested and optimized to accurately detect drowsiness based on scientific research. The system continuously improves with updates to the underlying machine learning models.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">5. What happens when the system detects drowsiness?</div>
+            <div class="faq-answer">When drowsiness is detected, WakeWave immediately triggers an alert (visual and/or sound) to warn the driver. In future versions, we plan to include additional safety measures like automatic GPS alerts to a predefined emergency contact.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">6. Can WakeWave be used on any device?</div>
+            <div class="faq-answer">Yes, WakeWave can be accessed via our web application on any device with a camera, including laptops, smartphones, and tablets. It is platform-independent and runs on any browser that supports video input.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">7. Do I need a constant internet connection to use the system?</div>
+            <div class="faq-answer">No, WakeWave runs offline as well once loaded in your browser. However, some features like GPS integration and user data synchronization will require an internet connection.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">8. Is my personal data safe?</div>
+            <div class="faq-answer">We take data privacy very seriously. WakeWave only processes video data locally on your device for drowsiness detection. We do not store or share your video feed unless you enable cloud storage features for personal use.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">9. How can I access the system?</div>
+            <div class="faq-answer">You can access WakeWave through our web application. Simply visit our website, sign up for an account, and follow the setup instructions to begin using the drowsiness detection feature.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">10. What are the future plans for WakeWave?</div>
+            <div class="faq-answer">
+                We are continuously working on improving the detection accuracy and adding new features such as:
+                <ul>
+                    <li>Integration with wearable devices</li>
+                    <li>Advanced analytics to track your driving habits</li>
+                    <li>Customizable alert settings and notifications</li>
+                    <li>Emergency contact alerts via GPS in case of drowsiness detection</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">11. How do I contact support if I face issues?</div>
+            <div class="faq-answer">If you encounter any issues or need help, you can reach out to our support team at <a href="mailto:support@wakewave.com">support@wakewave.com</a> or visit our <a href="#">Support Page</a> for more resources and troubleshooting guides.</div>
+        </div>
+    </div>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+          <div class="w-full flex flex-col md:flex-row py-6">
+            <div class="flex-1 mb-6 text-black">
+              <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+                WAKE WAVE
+              </a>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Links</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="{% url 'faq' %}" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+              </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Social</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Company</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% comment %} <a href="https://www.freepik.com/free-photos-vectors/background" class="text-gray-500 text-center">Background vector created by freepik - www.freepik.com</a> {% endcomment %}
+      </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

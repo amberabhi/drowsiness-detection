@@ -1,0 +1,253 @@
+{% load static tailwind_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - WakeWave</title>
+    {% tailwind_css %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <style>
+        .gradient {
+            background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+        }
+        .about-section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f7fafc;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .about-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #d53369;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .about-content {
+            font-size: 18px;
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+        .mission-values {
+            margin-top: 30px;
+        }
+        .mission-values h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d53369;
+            margin-bottom: 10px;
+        }
+        .values-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .team-section {
+            margin-top: 40px;
+        }
+        .team-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d53369;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .team-member {
+            flex-basis: 30%;
+            margin: 20px;
+            text-align: center;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .team-member h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <nav id="header" class="fixed w-full z-30 top-0 text-white gradient">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      
+          <div class="pl-4 flex items-center">
+            <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
+      
+              WAKE WAVE
+            </a>
+          </div>
+          <div class="block lg:hidden pr-4">
+            <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+              <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0   
+       6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="w-full 
+       flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0   
+       z-20" id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+              <li class="mr-3">
+                <a href="{% 
+       url 'change-theme' %}" class="nav-link bg-gray-100 px-4 py-2 rounded-3xl hover:bg-gray-300 duration-300 dark:bg-slate-600">
+                  {% if is_change_theme %}
+                    <i class="fa-solid fa-sun"></i>
+                  {% else %}
+                    <i class="fa-solid fa-moon"></i>
+                  {% endif %}
+                </a>
+              </li>
+              <li class="mr-3">
+                <a href="{% url 'detection' %}" class="nav-link inline-block text-black  hover:text-gray-800 py-2 px-4 detection-link ">Detection</a>
+              </li>
+              <li class="mr-3">
+                <a href="{% url 'gps' %}" class="nav-link inline-block text-black  hover:text-gray-800 py-2 px-4 gps-link ">Gps</a>
+              </li>
+            </ul>
+            <a href="{% url 'signup' %}">
+              <button id="navAction" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75   
+       focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                Sign Up
+              </button>
+            </a>
+          </div>
+        </div>
+        <hr class="border-b border-gray-100 opacity-25 my-0 py-0"   
+       />
+      </nav>
+
+    <div class="about-section">
+        <h1 class="about-title">About WakeWave</h1>
+
+        <div class="about-content">
+            <p>
+                Welcome to WakeWave, an innovative Drowsiness Detection System designed to revolutionize road safety. Our mission is to prevent accidents caused by driver fatigue by using advanced AI-driven technology. WakeWave monitors real-time indicators of drowsiness and provides timely alerts to ensure a safe driving experience for everyone.
+            </p>
+            <p>
+                With a dedicated team of engineers and researchers, we’ve built WakeWave to be an easy-to-use solution accessible from any device, making it a trusted tool for drivers and fleets around the world. Safety, reliability, and simplicity are at the core of our approach.
+            </p>
+        </div>
+
+        <div class="mission-values">
+            <h2>Our Mission</h2>
+            <p>
+                To create a world where technology ensures that no driver suffers from drowsiness-related accidents, promoting safer roads for everyone.
+            </p>
+
+            <h2>Our Core Values</h2>
+            <ul class="values-list">
+                <li>Innovation: Constantly pushing the boundaries of AI and machine learning.</li>
+                <li>Safety: Prioritizing safety in every aspect of our product design and implementation.</li>
+                <li>Integrity: Ensuring transparency and trust in how we handle data and interactions with our users.</li>
+                <li>Customer Focus: Building solutions with the end-user in mind to improve their daily lives.</li>
+            </ul>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet the Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="{% static 'images/sleepy.jpg' %}" alt="Team Member 1">
+                    <h3>Kritika gupta ✨</h3>
+                    <p>TEAM Leader and APP Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'images/sleepy.jpg' %}" alt="Team Member 2">
+                    <h3>Bidita Bhattacharya ✨</h3>
+                    <p>AI and ML Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'images/sleepy.jpg' %}" alt="Team Member 3">
+                    <h3>Ashutosh kumar sharma ✨</h3>
+                    <p>Lead Cloud Developer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white">
+        <div class="container mx-auto px-8">
+          <div class="w-full flex flex-col md:flex-row py-6">
+            <div class="flex-1 mb-6 text-black">
+              <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+                WAKE WAVE
+              </a>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Links</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="{% url 'faq' %}" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+              </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Social</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex-1">
+              <p class="uppercase text-gray-500 md:mb-6">Company</p>
+              <ul class="list-reset mb-6">
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="{%url 'aboutus'%}" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
+                </li>
+                <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% comment %} <a href="https://www.freepik.com/free-photos-vectors/background" class="text-gray-500 text-center">Background vector created by freepik - www.freepik.com</a> {% endcomment %}
+      </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
